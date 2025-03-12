@@ -1,0 +1,9 @@
+<div class="control-container">
+    <div class="control-list-heading">Control List</div>
+    @for(control of controlList; track control.id ){
+       <div class="control">
+        {{control.type}}
+       </div>
+    }
+</div>
+
