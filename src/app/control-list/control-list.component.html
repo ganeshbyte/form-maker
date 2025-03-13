@@ -1,9 +1,11 @@
-<div class="control-container">
+<div class="control-container" >
     <div class="control-list-heading">Control List</div>
+    <div cdkDropList (cdkDropListDropped)="onDrop($event)">
     @for(control of controlList; track control.id ){
-       <div class="control">
+       <div class="control" cdkDrag [cdkDragData]="control">
         {{control.type}}
        </div>
     }
+</div>
 </div>
 

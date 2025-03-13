@@ -1,0 +1,14 @@
+<div class="form-view">
+    <div>Form View</div>
+    <div>
+      <form action="">
+      @for(control of controlFieldList; track control.id) {
+        <div class="form-control">
+          <label>{{control.type}}</label>
+          <input [type]="control.type" [placeholder]="control.type">
+        </div>
+      }
+      <app-blue-button label="Submit" [type]="'submit'"></app-blue-button>
+    </form>
+    </div>
+  </div>
