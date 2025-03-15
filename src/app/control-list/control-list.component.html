@@ -1,10 +1,22 @@
 <div class="control-container" >
     <div class="control-list-heading">Control List</div>
     <div cdkDropList (cdkDropListDropped)="onDrop($event)">
-    @for(control of controlList; track control.id ){
-       <div class="control" cdkDrag [cdkDragData]="control">
-        {{control.type}}
-       </div>
+    @for(control of controlList(); track control.id ){
+        @if(control?.isView){
+            <div>
+                <mat-form-field class="example-full-width">
+                <!-- <mat-label>First name</mat-label> -->
+                <input matInput [placeholder]="control.type" [(ngModel)]="controlLabel">
+              </mat-form-field>
+            <button mat-flat-button (click)="addControl(control)" >
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+        }@else {
+            <button class="control" cdkDrag [cdkDragData]="control" (click)="onControlClick(control.id)">
+                {{control.type}}
+            </button>
+        }
     }
 </div>
 </div>

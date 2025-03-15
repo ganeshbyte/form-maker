@@ -5,10 +5,10 @@
       @for(control of controlFieldList; track control.id) {
         <div class="form-control">
           <label>{{control.type}}</label>
-          <input [type]="control.type" [placeholder]="control.type">
+          <input [type]="control.type" [placeholder]="control.label">
         </div>
       }
-      <app-blue-button label="Submit" [type]="'submit'"></app-blue-button>
+      <app-blue-button label="Submit" [type]="'submit'" size="3px"></app-blue-button>
     </form>
     </div>
   </div>

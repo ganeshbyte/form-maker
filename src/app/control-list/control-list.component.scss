@@ -1,3 +1,20 @@
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+:root {
+  @include mat.button-overrides((
+    filled-container-color: orange,
+    filled-label-text-color: red,
+  ));
+}
+
+::part(button) {
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
 .control-container{
     border: 1px solid gray;
     display: inline-block;
